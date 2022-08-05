@@ -1,0 +1,1 @@
+worker: python bloomy.py & python the_painter.py
