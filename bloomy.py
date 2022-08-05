@@ -22,6 +22,7 @@ def generate(text, sample=False):
         "parameters": {
             "max_new_tokens": 32,
             "do_sample": sample,
+            "top_p": 0.95,
             "early_stopping": False,
             "length_penalty": 0.0,
             "eos_token_id": None,
