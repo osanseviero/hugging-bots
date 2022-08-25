@@ -1,6 +1,10 @@
 import os
 import discord
 import gradio as gr
+import io, base64
+from PIL import Image
+import random
+import shortuuid
 
 DISCORD_TOKEN = os.environ.get("DISCORD_MINDS_EYE_TOKEN", None)
 
@@ -40,7 +44,7 @@ class MyClient(discord.Client):
         if message.content.startswith('!latent_diffuse'):
             print("Generating")
             text = " ".join(message.content.split()[1:])
-            result = text2image_diffusion(text, sample)
+            result = text2image_diffusion(text)
             await message.reply(f'Here are your diffused images', file=discord.File(result))
 
 
