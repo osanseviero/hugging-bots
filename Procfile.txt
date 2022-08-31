@@ -1,1 +1,1 @@
-worker: python bloomy.py & python the_painter.py
+worker: python assigner.py
