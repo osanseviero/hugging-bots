@@ -1,7 +1,7 @@
 import os
 import discord
 
-DISCORD_TOKEN =  os.environ.get("DISCORD_BLOOMY_TOKEN", None)
+DISCORD_TOKEN =  os.environ.get("DISCORD_ASSIGN_TOKEN", None)
 
 roles = {
     "🎨": "diffusers",
