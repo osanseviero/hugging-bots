@@ -1,10 +1,10 @@
 import os
 import discord
-import gradio as gr
+import gradio_client as gr 
 
 DISCORD_TOKEN = os.environ.get("DISCORD_PAINTER_TOKEN", None)
 
-jojogan = gr.Blocks.load(name="spaces/akhaliq/JoJoGAN")
+jojogan = gr.Client("akhaliq/JoJoGAN") 
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -29,10 +29,9 @@ class MyClient(discord.Client):
             style = 'sketch'
 
         if style:
-            print("Painting")
             if message.attachments:
                 attachment = message.attachments[0]
-                im = jojogan(attachment.url, style)
+                im = jojogan.predict(attachment.url, style)
                 await message.reply(f'Here is the {style} version of it', file=discord.File(im))
             else:
                 await message.channel.send("No attachments to be found...Can't animify dat! Try sending me an image 😉")
