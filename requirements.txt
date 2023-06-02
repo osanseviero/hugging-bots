@@ -1,4 +1,8 @@
 git+https://github.com/Rapptz/discord.py.git
-requests
 Pillow 
 gradio_client
+ratelimiter
+httpx
+requests
+asyncio
+discord.py
